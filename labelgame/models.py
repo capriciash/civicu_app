@@ -16,7 +16,7 @@ class Image(models.Model):
                                max_length=512, default=None, null=True)
     uploaded_by = models.ForeignKey(User, default=None, null=True)
     img_file = models.FileField("Select file to upload", upload_to='images')
-    # taken_date = models.DateTimeField('Date photo was taken.', null=True, default=None)
+    date_taken = models.DateField('Date photo was taken.',blank=True, null=True)
     updated_date = models.DateTimeField('Date photo was changed.', auto_now=True)
     created_date = models.DateTimeField('Date photo was uploaded.', auto_now_add=True)
 
@@ -30,7 +30,6 @@ class UserLabel(models.Model):
     #     return self.name
     # def was_voted_recently(self):
     #     return self.sel_date >= timezone.now() - datetime.timedelta(days=1)
-
 
 class TotalVotes(models.Model):
     """ Aggregated votes (by all users, who are allowed to vote multiple times) for an individual Image """

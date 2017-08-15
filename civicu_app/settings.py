@@ -40,12 +40,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'labelgame.apps.LabelgameConfig',
+    'movies.apps.MoviesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     # 'labelgame'
 ]
 
@@ -130,3 +132,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/user_uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'user_uploads')
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authenticate.SessionAuthentication',
+#     )
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+#     )
+# }

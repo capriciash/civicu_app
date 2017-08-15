@@ -19,5 +19,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^labelgame/', include('labelgame.urls')),
+    url(r'^movies/', include('movies.urls', namespace='movies_list')),
     url(r'^admin/', admin.site.urls),
 ]

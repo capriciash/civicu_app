@@ -4,6 +4,12 @@ from django.shortcuts import render, redirect
 from .models import Image
 from .forms import FileUploadForm
 
+from rest_framework import status, generics
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+from . import serializers
+from . import models
 
 def form_file_upload(request):
     if request.method == 'POST':
@@ -23,3 +29,7 @@ def index(request):
 
 # def index(request):
 #     return HttpResponse("Hello, world. You're in the Animal Labeler App.")
+
+class ListImages(generics.ListCreateAPIView):
+    queryset = Image.objects.all()
+    serializer_class = serializers.ImageSerializer

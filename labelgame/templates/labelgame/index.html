@@ -1,18 +1,16 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
-
+<!-- {% load static %} -->
 
 {% block content %}
-  <link rel="stylesheet" type="text/css" href="{% static 'labelgame/style.css' %}" />
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'labelgame/style.css' %}" /> -->
   <h3>Images</h3>
   <table>
     <tr><th>Filename</th><th>Uploaded</th></tr>
     {% for img in images %}
         <tr>
           <td><a href="{{ obj.img.url }}">{{ img.img_file.name }}</a></td>
-          <td><small>{{ img.uploaded_by }}</small></td>
+          <td><small>{{ img.created_date }}</small></td>
         </tr>
     {% endfor %}
   </table>
