@@ -46,7 +46,6 @@ def recognize_greeting(statement):
         print('Hi, how are you?')
     else:
         return False
-    pass
 
 def parse_args(args):
     """Parse command line parameters
@@ -58,8 +57,7 @@ def parse_args(args):
       :obj:`argparse.Namespace`: command line parameters namespace
     """
     return None, args
-    # parser = argparse.ArgumentParser()
-        # description="Just a Fibonnaci demonstration")
+    parser = argparse.ArgumentParser() #description="Just a greeting recognizer"
     # parser.add_argument(
     #     '--version',
     #     action='version',
@@ -69,6 +67,10 @@ def parse_args(args):
     #     help="n-th Fibonacci number",
     #     type=int,
     #     metavar="INT")
+    parser.add_argument(
+        '--v'
+        'upload'
+    )
     # parser.add_argument(
     #     '-v',
     #     '--verbose',
@@ -83,7 +85,7 @@ def parse_args(args):
     #     help="set loglevel to DEBUG",
     #     action='store_const',
     #     const=logging.DEBUG)
-    # return parser.parse_known_args(args)
+    return parser.parse_known_args(args)
 
 # class Match:
 #
@@ -129,9 +131,23 @@ def main(args):
     args, unknown = parse_args(args)
     # setup_logging(args.loglevel)
     # _logger.debug("Starting crazy calculations...")
-    print("{}".format(args, recognize_greeting(' '.join(unknown))))
+    print("{}".format(recognize_greeting(' '.join(unknown))))
     # _logger.info("Script ends here")
 
+
+WALLPAPER_PATH = os.path.join(os.path.expanduser('~'), 'Pictures', 'wallpaper')
+
+def change_wallpaper(new_path=WALLPAPER_PATH, wallpaper_path=WALLPAPER_PATH, backup=False):
+    new_path, wallpaper_path = os.path.abspath(new_path), os.path.abspath(wallpaper_path)
+    with open(new_path, 'rb') as fin:
+        newimage = fin.read()
+    if new_path != wallpaper_path:
+        with open(wallpaper_path, 'rb') as fin:
+            oldimage = fin.read()
+        if newimage != oldimage:
+            with open(wallpaper_path, 'wb') as fout:
+                fout.write(newimage)
+            return newimage
 
 def run():
     """Entry point for console_scripts
