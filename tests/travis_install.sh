@@ -29,8 +29,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     source activate testenv
 
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
-    # Use standard ubuntu packages in their default version
-fi echo "Using standard ubuntu packages in their default version"
+    echo "Using standard ubuntu packages in their default version" 
+fi
 
 if [[ "$COVERAGE" == "true" ]]; then
     pip install coverage coveralls
