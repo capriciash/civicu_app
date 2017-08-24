@@ -1,0 +1,96 @@
+[
+{
+  "model": "labelgame.image",
+  "pk": 1,
+  "fields": {
+    "caption": "2017-01-12",
+    "uploaded_by": 1,
+    "img_file": "images/wolfpic1.jpg",
+    "date_taken": "2017-08-07",
+    "updated_date": "2017-08-05T20:47:08.615Z",
+    "created_date": "2017-08-05T20:47:08.596Z"
+  }
+},
+{
+  "model": "labelgame.image",
+  "pk": 2,
+  "fields": {
+    "caption": "Wolf, somewhere",
+    "uploaded_by": 1,
+    "img_file": "images/HUNT0133.jpg",
+    "date_taken": "2017-08-07",
+    "updated_date": "2017-08-05T20:48:34.979Z",
+    "created_date": "2017-08-05T20:48:34.979Z"
+  }
+},
+{
+  "model": "labelgame.image",
+  "pk": 3,
+  "fields": {
+    "caption": "Blue Eyes Wolf",
+    "uploaded_by": 1,
+    "img_file": "images/blue_eyes_xw4x9Kb.jpg",
+    "date_taken": null,
+    "updated_date": "2017-08-08T02:08:28.891Z",
+    "created_date": "2017-08-08T02:08:28.891Z"
+  }
+},
+{
+  "model": "labelgame.image",
+  "pk": 4,
+  "fields": {
+    "caption": "Hunt photo",
+    "uploaded_by": 1,
+    "img_file": "images/HUNT0133.jpg",
+    "date_taken": "2017-01-07",
+    "updated_date": "2017-08-08T02:41:29.313Z",
+    "created_date": "2017-08-08T02:41:29.313Z"
+  }
+},
+{
+  "model": "labelgame.image",
+  "pk": 5,
+  "fields": {
+    "caption": "Stars and wolf",
+    "uploaded_by": 1,
+    "img_file": "images/wolfpic1.jpg",
+    "date_taken": "2017-06-03",
+    "updated_date": "2017-08-08T02:44:08.667Z",
+    "created_date": "2017-08-08T02:44:08.667Z"
+  }
+},
+{
+  "model": "labelgame.image",
+  "pk": 6,
+  "fields": {
+    "caption": "majestic-wolf",
+    "uploaded_by": null,
+    "img_file": "images/majestic-wolf.jpg",
+    "date_taken": null,
+    "updated_date": "2017-08-15T02:02:47.057Z",
+    "created_date": "2017-08-15T02:02:47.057Z"
+  }
+},
+{
+  "model": "labelgame.image",
+  "pk": 7,
+  "fields": {
+    "caption": "baby ghost",
+    "uploaded_by": 1,
+    "img_file": "images/baby_ghost.png",
+    "date_taken": "2017-02-14",
+    "updated_date": "2017-08-15T02:10:05.493Z",
+    "created_date": "2017-08-15T02:10:05.493Z"
+  }
+},
+{
+  "model": "labelgame.userlabel",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "sel_animal": "Wolf",
+    "sel_date": "2017-08-23T02:20:37.170Z",
+    "image": 3
+  }
+}
+]

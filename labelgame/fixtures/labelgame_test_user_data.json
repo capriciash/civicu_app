@@ -1,0 +1,20 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$ovyFlBRZOupO$IUHxaDLIV9i5YZjklO5r4FcrZtiQeKqYESrqNGOP8ko=",
+    "last_login": "2017-08-23T01:34:05.701Z",
+    "is_superuser": true,
+    "username": "ashleyriehl",
+    "first_name": "",
+    "last_name": "",
+    "email": "capriciash@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-08-05T19:39:42.020Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
