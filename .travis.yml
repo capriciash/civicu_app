@@ -22,13 +22,15 @@ install:
   - source tests/travis_install.sh
   - pip install --upgrade pip
   - pip install -r requirements.txt
+  - pip install -r test-requirements.txt
 before_script:
   - git config --global user.email "you@example.com"
   - git config --global user.name "Your Name"
 script:
   - python manage.py test
-  # - python setup.py test
+  - python setup.py test
 after_success:
+  - codecov
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
 cache:
   - apt

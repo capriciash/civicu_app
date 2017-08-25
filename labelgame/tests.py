@@ -3,15 +3,16 @@ import datetime
 
 from django.test import TestCase
 from django.utils import timezone
+import doctest
 # from django.core.urlresolvers import reverse
 
+from civicu_app import bot
 import civicu_app.settings
 from .models import Image
 from django.contrib.auth.models import User
 # from .forms import FileUploadForm
 
 MEDIA_ROOT = civicu_app.settings.MEDIA_ROOT
-
 
 class ImageModelTest(TestCase):
     fixtures = ['labelgame_test_data.json', 'labelgame_test_user_data.json']
@@ -32,3 +33,9 @@ class ImageModelTest(TestCase):
         self.assertTrue(isinstance(image, Image))
         # self.assertEqual(image.__unicode__(), image.caption)
         self.assertEqual(self.caption, image.caption)
+
+class BotTest(TestCase):
+
+    def test_doctests(self):
+        results = doctest.testmod(bot)
+        self.assertEqual(results.failed, 0)

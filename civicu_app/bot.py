@@ -19,6 +19,7 @@ from __future__ import division, print_function, absolute_import
 import argparse
 import sys
 import logging
+import os
 
 from civicu_app import __version__
 
