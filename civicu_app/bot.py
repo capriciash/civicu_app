@@ -20,6 +20,7 @@ import argparse
 import sys
 import logging
 import os
+import requests
 
 from civicu_app import __version__
 
@@ -57,36 +58,39 @@ def parse_args(args):
     Returns:
       :obj:`argparse.Namespace`: command line parameters namespace
     """
-    return None, args
     parser = argparse.ArgumentParser() #description="Just a greeting recognizer"
-    # parser.add_argument(
-    #     '--version',
-    #     action='version',
-    #     version='civicu_app {ver}'.format(ver=__version__))
-    # parser.add_argument(
-    #     dest="n",
-    #     help="n-th Fibonacci number",
-    #     type=int,
-    #     metavar="INT")
+    parser.add_argument(
+        '--version',
+        action='version',
+        version='civicu_app {ver}'.format(ver=__version__))
     parser.add_argument(
         '--v'
         'upload'
     )
-    # parser.add_argument(
-    #     '-v',
-    #     '--verbose',
-    #     dest="loglevel",
-    #     help="set loglevel to INFO",
-    #     action='store_const',
-    #     const=logging.INFO)
-    # parser.add_argument(
-    #     '-vv',
-    #     '--very-verbose',
-    #     dest="loglevel",
-    #     help="set loglevel to DEBUG",
-    #     action='store_const',
-    #     const=logging.DEBUG)
+    parser.add_argument(
+        '-v',
+        '--verbose',
+        dest="loglevel",
+        help="set loglevel to INFO",
+        action='store_const',
+        const=logging.INFO)
+    parser.add_argument(
+        '-vv',
+        '--very-verbose',
+        dest="loglevel",
+        help="set loglevel to DEBUG",
+        action='store_const',
+        const=logging.DEBUG)
     return parser.parse_known_args(args)
+
+def upload(filename):
+    base_dir = os.path.join(os.getenv('HOME'), 'Desktop')
+    url ='http://localhost:8000/labelgame/api/v1/images/'
+    with open(os.path.join(base_dir, filename), 'rb') as fin:
+        print(fin.name)
+        POST_data = {'caption': 'baby ghost', 'uploaded_by': 1, 'date_taken': '2017-02-17'}
+        files = {'img_file': (filename, fin), 'filename': filename}
+        resp = requests.post(url, data=POST_data, files=files)
 
 # class Match:
 #
